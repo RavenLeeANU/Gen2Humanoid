@@ -1,0 +1,6 @@
+[submodule "third_party/HY-Motion-1.0"]
+	path = third_party/HY-Motion-1.0
+	url = https://github.com/Tencent-Hunyuan/HY-Motion-1.0.git
+[submodule "third_party/GMR"]
+	path = third_party/GMR
+	url = https://github.com/YanjieZe/GMR.git

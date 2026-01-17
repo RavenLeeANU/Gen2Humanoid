@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.local
+
+# Large files (keep mp4 for examples)
+*.avi
+*.mov
+*.pkl
+*.npz
+*.pt
+*.pth
+*.ckpt
+
+# Data folder (keep only mp4)
+data/**/*.pkl
+data/**/*.npz
+data/**/*.glb
+data/**/*.mcs
+data/**/*.smpl
+data/**/*.json
+data/**/spec_calib/
+
+# Logs
+logs/
+*.log
+wandb/
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+outputs/
+results/
+checkpoints/
+
+
+run_server.py
