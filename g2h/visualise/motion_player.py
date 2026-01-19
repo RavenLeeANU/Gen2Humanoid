@@ -35,10 +35,15 @@ def play(fps, smplx_path = None, smplx_motion  = None, robot_path  = None, robot
         smplx_player = SMPLXViserPlayer(smplx_model_path=smplx_path, server=cmp)
         smplx_player.load_anim(smplx_motion)
         smplx_player.set_position([0,0,0])
+    else:
+        smplx_player = None
+
     if robot_path and robot_motion:
         robot_player = MJCFViserPlayer(xml_path=robot_path, server=cmp)
         robot_player.load_anim(robot_motion)
         robot_player.set_position([1,0.7,0])
+    else:
+        robot_player = None
 
     if smplx_player:
         smplx_player.server = cmp
@@ -52,7 +57,7 @@ def play(fps, smplx_path = None, smplx_motion  = None, robot_path  = None, robot
     while True:
         t0 = time.time()
 
-        if smplx_player:
+        if robot_player:
             robot_player.get_frame(robot_player.cur_frame)
             robot_player.cur_frame += 1
 

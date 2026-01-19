@@ -43,7 +43,10 @@ def main():
             "--show_smplx is specified but --smplx_motion is missing."
         )
 
-    robot_path = ROBOT_XML_DICT[args.robot]
+    robot_path = None
+    if args.robot:
+        robot_path = ROBOT_XML_DICT[args.robot]
+    
     play(args.fps, smplx_path=GMR_BODY_MODELS_DIR, smplx_motion=args.smplx_motion, robot_path=robot_path, robot_motion=args.robot_motion)
 
 

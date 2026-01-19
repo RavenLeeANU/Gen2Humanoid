@@ -14,9 +14,12 @@ The pipeline supports:
 
 # Demo
 
-<p align="center">
-  <img src="assets/demo.gif" width="80%">
-</p>
+| Prompts | Results |
+|------|------|
+| A person jumps up | <img src="assets/demo.gif" width="80%"> |
+| A person plays the piano | <img src="assets/demo2.gif" width="80%"> |
+| A person runs forward, then kicks a soccer ball | <img src="assets/demo3.gif" width="80%"> |
+| A person dances jazz, jumping rhythmically | <img src="assets/demo4.gif" width="80%"> |
 
 ## Pipeline
 ```css
