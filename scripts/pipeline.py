@@ -99,19 +99,19 @@ def main():
     env_group.add_argument("--t2m_model", choices=["HY-Motion-1.0","HY-Motion-1.0-Lite"], help="currently supports HY-Motion-1.0 and HY-Motion-1.0-Lite.")
 
     env_group = parser.add_argument_group("Motion Retarget Setting")
-    env_group.add_argument("--src_folder", default="", help="prompt")
-    env_group.add_argument("--tgt_folder", default="", help="")
-    env_group.add_argument("--robot_type", default="", help="")
+    env_group.add_argument("--src_folder", default="outputs/cvt", help="the directory of converted smplx files from text to motion results.")
+    env_group.add_argument("--tgt_folder", default="outputs/gmr", help="the directory of retargeted files from gmr results.")
+    env_group.add_argument("--robot_type", default="unitree_g1", help="robot type, for checking support robots please refer to gmr.")
 
     args = parser.parse_args()
     
-    # step1
+    # step1: run text to motion inference model 
     run_t2m(model_path=args.t2m_model, input_text_dir=args.input_text_dir, output_dir=args.output_dir)
 
-    # step2
+    # step2: run convert output file to smplx file
     run_convert(input_dir=args.output_dir, output_dir=args.src_folder)
 
-    # step3
+    # step3 run gmr
     run_retarget(input_dir=args.src_folder, output_dir=args.tgt_folder, robot_type=args.robot_type)
 
 if __name__ == "__main__":
