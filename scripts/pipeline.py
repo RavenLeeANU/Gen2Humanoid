@@ -94,19 +94,19 @@ def main():
     )
 
     env_group = parser.add_argument_group("Text to Motion Setting")
-    env_group.add_argument("--input_text_dir", default="", help="prompt")
-    env_group.add_argument("--output_dir", default="", help="")
-    env_group.add_argument("--t2m_model", choices=["HY-Motion-1.0","HY-Motion-1.0-Lite"])
+    env_group.add_argument("--input_text_dir", default="data/t2m/example_subset.json", help="the directory of json files which records prompts.")
+    env_group.add_argument("--output_dir", default="", help="text to motion output directory.")
+    env_group.add_argument("--t2m_model", choices=["HY-Motion-1.0","HY-Motion-1.0-Lite"], help="currently supports HY-Motion-1.0 and HY-Motion-1.0-Lite.")
 
     env_group = parser.add_argument_group("Motion Retarget Setting")
     env_group.add_argument("--src_folder", default="", help="prompt")
     env_group.add_argument("--tgt_folder", default="", help="")
-    env_group.add_argument("--robot_type", default="")
+    env_group.add_argument("--robot_type", default="", help="")
 
     args = parser.parse_args()
     
     # step1
-    # run_t2m(model_path=args.t2m_model, input_text_dir=args.input_text_dir, output_dir=args.output_dir)
+    run_t2m(model_path=args.t2m_model, input_text_dir=args.input_text_dir, output_dir=args.output_dir)
 
     # step2
     run_convert(input_dir=args.output_dir, output_dir=args.src_folder)
