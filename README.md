@@ -105,7 +105,7 @@ follow the details to download necessay pretrain models, see [HY-Motion-1.0 READ
 
 or use download script
 ```bash
-bash command/download_hy_model.sh
+bash commands/download_hy_model.sh
 
 ```
 
